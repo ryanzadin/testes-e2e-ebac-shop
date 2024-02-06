@@ -36,6 +36,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             cy.get('.checkout-button').click()
             cy.get('#terms').click()
             cy.get('#place_order').click()
+            cy.get('.woocommerce-column__title').should('contain', 'Endereço de faturamento')
         })
 
     });
