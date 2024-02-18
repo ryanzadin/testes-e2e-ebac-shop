@@ -2,11 +2,12 @@ pipeline {
     agent any 
 
          stages {
-             stage('inicial'){
+             stage('Instalar dependencias'){
                 steps{
-                    echo 'Iniciando pipeline'
+                    sh 'npm install'
                 }
+            }     
 
-            }      
+             
         }
     }
