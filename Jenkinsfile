@@ -2,11 +2,11 @@ pipeline {
     agent any 
 
          stages {
-             stage('Instalar dependencias'){
-  scripts: {
-    sh 'npx cypress run'
-  }
-}     
+             stage('Executar testes'){
+                scripts: {
+                    sh 'NO_COLOR=1 npm run cy:run'
+                      }
+                    }     
 
 
         }
