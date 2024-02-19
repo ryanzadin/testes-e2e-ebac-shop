@@ -2,9 +2,9 @@ pipeline {
     agent any 
 
          stages {
-             stage('Instalar dependencias'){
+             stage('Executar testes'){
                 steps{
-                    script 'npm install'
+                    sh 'NO_COLOR=1 npm run cy:run'
                 }
             }     
 
