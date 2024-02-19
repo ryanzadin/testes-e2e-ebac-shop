@@ -4,7 +4,7 @@ pipeline {
          stages {
              stage('Instalar dependencias'){
   scripts: {
-    sh 'cypress run'
+    sh 'npx cypress run'
   }
 }     
 
