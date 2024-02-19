@@ -2,9 +2,9 @@ pipeline {
     agent any 
 
          stages {
-             stage('Executar testes'){
+             stage('Instalar dependencias'){
                 steps{
-                    sh 'NO_COLOR=1 npm run cy:run'
+                    sh 'npm install cypress --save-dev'
                 }
             }     
 
