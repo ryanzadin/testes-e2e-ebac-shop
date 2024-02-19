@@ -3,10 +3,12 @@ pipeline {
 
          stages {
              stage('Instalar dependencias'){
-                steps{
-                    sh 'npm install cypress --save-dev'
-                }
-            }     
+  scripts: {
+    start: "my-server -p 8080",
+    cy:run: "cypress run",
+    test: "start-server-and-test start http://localhost:8080 cy:run"
+  }
+}     
 
 
         }
