@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'nmp run cy:run'
+                bat 'set NO_COLOR=1 nmp run cy:run'
             }
         }
         stage('Deploy') {
