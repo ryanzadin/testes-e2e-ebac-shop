@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Setup') {
+            steps {
+                bat 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'nmp run cy:run'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'plugins', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            }
+        }
+    }
+}
