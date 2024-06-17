@@ -1,4 +1,9 @@
 {
     "baseUrl": "http://lojaebac.ebaconline.art.br/",
-    "reporter": "mochawesome"
+    "reporter": "mochawesome",
+    "reporterOptions": {   
+        "overwrite": false,
+        "html": false,
+        "json": true
+      }
 }

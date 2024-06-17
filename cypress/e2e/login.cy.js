@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+const marge = require('mochawesome-report-generator')
+const { merge } = require('mochawesome-merge')
+
 let dadosLogin
 
 context('Funcionalidade Login', () => {
@@ -35,4 +38,19 @@ context('Funcionalidade Login', () => {
         cy.get('.page-title').should('contain', 'Minha conta')
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac')
     })
+    
+    cypress.run().then(
+        () => {
+          generateReport()
+        },
+        error => {
+          generateReport()
+          console.error(error)
+          process.exit(1)
+        }
+      )
+      
+      function generateReport(options) {
+        return merge(options).then(report => marge.create(report, options))
+      }
 })
