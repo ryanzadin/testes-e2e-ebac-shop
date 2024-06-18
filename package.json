@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "npx cypress open",
     "cy:dashboard": "",
-    "start": "npx serverest", 
-    "cy:run" : "npx cypress run",
-    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json"
+    "start": "npx serverest",
+    "cy:run": "npx cypress run",
+    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json",
+     "cy:run-ci": "start-server-and-test start-server http://localhost:8080 test"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   "bugs": {},
   "homepage": "",
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "start-server-and-test": "^2.0.4"
   },
   "dependencies": {
     "faker": "^5.5.3",
